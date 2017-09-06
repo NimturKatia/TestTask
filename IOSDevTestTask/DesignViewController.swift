@@ -54,10 +54,7 @@ class DesignViewController: UIViewController,  UICollectionViewDelegate, UIColle
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell : SuggestedCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "suggestedCell", for: indexPath) as! SuggestedCollectionViewCell
-        
-//        let imageName = String(indexPath.row)
-//        cell.configureWith(imageName:imageName)
-        
+
         return cell
     }
 
@@ -76,8 +73,8 @@ class DesignViewController: UIViewController,  UICollectionViewDelegate, UIColle
     }
     
     func pageConfigs(){
-        self.profileImageView.layer.cornerRadius = self.profileImageView.frame.size.width / 2
-        self.profileView.layer.cornerRadius      = self.profileView.frame.size.width / 2
+        self.profileImageView.layer.cornerRadius = self.profileImageView.frame.size.height / 2
+        self.profileView.layer.cornerRadius      = self.profileView.frame.size.height / 2
         
         self.followButton.layer.cornerRadius = self.followButton.frame.size.height / 2
         self.shareButton.layer.cornerRadius  = self.shareButton.frame.size.height / 2

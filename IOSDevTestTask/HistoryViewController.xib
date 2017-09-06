@@ -20,9 +20,8 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="IcQ-oq-3jN">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="IcQ-oq-3jN">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="HQ8-8s-2Xv"/>
@@ -31,6 +30,12 @@
                 </tableView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="IcQ-oq-3jN" secondAttribute="trailing" id="OmS-Fo-oAf"/>
+                <constraint firstItem="IcQ-oq-3jN" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="XnT-tB-VdB"/>
+                <constraint firstAttribute="bottom" secondItem="IcQ-oq-3jN" secondAttribute="bottom" id="hCj-ER-OIb"/>
+                <constraint firstItem="IcQ-oq-3jN" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="wYk-gy-OcJ"/>
+            </constraints>
             <point key="canvasLocation" x="26.5" y="52.5"/>
         </view>
     </objects>
