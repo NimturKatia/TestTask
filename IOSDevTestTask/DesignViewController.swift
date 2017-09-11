@@ -144,10 +144,16 @@ class DesignViewController: UIViewController,  UICollectionViewDelegate, UIColle
     }
     
     func pageConfigs(){
-        self.profileImageView.layer.cornerRadius = self.profileImageView.frame.size.width / 2
-        self.profileView.layer.cornerRadius      = self.profileView.frame.size.width / 2
-        self.followButton.layer.cornerRadius     = self.followButton.frame.size.height / 2
-        self.shareButton.layer.cornerRadius      = self.shareButton.frame.size.height / 2
+        let screenWidth = UIScreen.main.bounds.width / 375.0
+        
+        self.profileImageView.layer.cornerRadius = (self.profileImageView.frame.size.width / 2) * screenWidth
+        self.profileView.layer.cornerRadius      = (self.profileView.frame.size.width / 2) * screenWidth
+//
+//        self.profileImageView.layer.cornerRadius = 60
+//        self.profileView.layer.cornerRadius      = 60
+        
+        self.followButton.layer.cornerRadius     = self.followButton.frame.size.height / 2 * screenWidth
+        self.shareButton.layer.cornerRadius      = self.shareButton.frame.size.height / 2 * screenWidth
         
         self.setButtonBorderColor(button: self.shareButton, red: 55, green: 181, blue: 189)
         self.setButtonBorderColor(button: self.followButton, red: 55, green: 181, blue: 189)
