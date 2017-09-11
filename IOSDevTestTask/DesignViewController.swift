@@ -148,9 +148,6 @@ class DesignViewController: UIViewController,  UICollectionViewDelegate, UIColle
         
         self.profileImageView.layer.cornerRadius = (self.profileImageView.frame.size.width / 2) * screenWidth
         self.profileView.layer.cornerRadius      = (self.profileView.frame.size.width / 2) * screenWidth
-//
-//        self.profileImageView.layer.cornerRadius = 60
-//        self.profileView.layer.cornerRadius      = 60
         
         self.followButton.layer.cornerRadius     = self.followButton.frame.size.height / 2 * screenWidth
         self.shareButton.layer.cornerRadius      = self.shareButton.frame.size.height / 2 * screenWidth
