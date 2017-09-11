@@ -39,7 +39,11 @@ class ImagesViewController: UIViewController, UICollectionViewDelegate, UICollec
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: (self.view.frame.width / 3 - 16), height: (self.view.frame.height / 3 - 110))
+        if self.view.frame.width > self.view.frame.height {
+            return CGSize(width: (self.view.frame.width / 3 - 16), height: (self.view.frame.height / 3 + 40))
+        } else {
+            return CGSize(width: (self.view.frame.width / 3 - 16), height: (self.view.frame.height / 3 - 110))
+        }
     }
 
     /*

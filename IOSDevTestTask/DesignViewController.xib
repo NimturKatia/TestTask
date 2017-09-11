@@ -60,9 +60,9 @@
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m7Q-4Z-QU5">
                                     <rect key="frame" x="123" y="10" width="130" height="130"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="f8m-WS-uoY">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="noimage" translatesAutoresizingMaskIntoConstraints="NO" id="f8m-WS-uoY">
                                             <rect key="frame" x="5" y="5" width="120" height="120"/>
-                                            <color key="backgroundColor" red="0.87898504734039307" green="0.89027446508407593" blue="0.89023816585540771" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="backgroundColor" red="0.99324244260787964" green="0.86509591341018677" blue="0.74320822954177856" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </imageView>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -245,4 +245,7 @@
             <point key="canvasLocation" x="25.5" y="51.5"/>
         </view>
     </objects>
+    <resources>
+        <image name="noimage" width="100" height="100"/>
+    </resources>
 </document>

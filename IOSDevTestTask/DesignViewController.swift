@@ -8,7 +8,8 @@
 
 import UIKit
 
-class DesignViewController: UIViewController,  UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class DesignViewController: UIViewController,  UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout,  UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var profileView: UIView!
     @IBOutlet weak var nickNameLabel: UILabel!
@@ -27,7 +28,6 @@ class DesignViewController: UIViewController,  UICollectionViewDelegate, UIColle
     @IBOutlet weak var followingLabel: UILabel!
     @IBOutlet weak var suggestedCollectionView: UICollectionView!
     
-    
     let userNickName      = "Vika@"
     let userName          = "Viktoria Colt"
     let userStatusMessage = "Do you want to go out with me?\n(A) Yes (B) A (C) B."
@@ -37,15 +37,87 @@ class DesignViewController: UIViewController,  UICollectionViewDelegate, UIColle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
         suggestedCollectionView.register(UINib(nibName: "SuggestedCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "suggestedCell")
         self.pageConfigs()
+        
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
+        self.profileImageView.isUserInteractionEnabled = true
+        self.profileImageView.addGestureRecognizer(tapGestureRecognizer)
+        self.profileImageView.clipsToBounds = true
     }
+    
+    func imageTapped(tapGestureRecognizer: UITapGestureRecognizer)
+    {
+        _ = tapGestureRecognizer.view as! UIImageView
+        
+        let actionSheet = UIAlertController(title: "Change  profile Image", message: nil, preferredStyle: .actionSheet)
+        
+        actionSheet.addAction(UIAlertAction(title: "Make new image", style: .default, handler:{
+            action in
+            self.showCamera()
+        }))
+        
+        actionSheet.addAction(UIAlertAction(title: "Choose new image", style: .default, handler:{
+            action in
+            self.showGallery()
+        }))
+        
+        actionSheet.addAction(UIAlertAction(title: "Delete image", style: .default, handler:{
+            action in
+            self.deleteCurrentProfileImage()
+        }))
+        
+        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        
+        self.present(actionSheet, animated:  true, completion: nil)
+    }
+    
+    func showCamera(){
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            let cameraPicker           = UIImagePickerController()
+            cameraPicker.delegate      = self
+            cameraPicker.sourceType    = .camera
+            cameraPicker.allowsEditing = true
+            
+            present(cameraPicker, animated:  true, completion: nil)
+        }
+    }
+    
+    func showGallery(){
+        let galleryPicker           = UIImagePickerController()
+        galleryPicker.delegate      = self
+        galleryPicker.sourceType    = .photoLibrary
+        galleryPicker.allowsEditing = true
+        
+        present(galleryPicker, animated: true, completion: nil)
+    }
+    
+    func deleteCurrentProfileImage(){
+        self.profileImageView.image = UIImage(named: "noimage")
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        dismiss(animated: true, completion: nil)
+        
+        var selectedImage: UIImage?
+        
+        if let editedImage = info["UIImagePickerControllerEditedImage"] as? UIImage {
+            selectedImage = editedImage
+        } else {
+            let originalImage = info["UIImagePickerControllerOriginalImage"] as? UIImage
+            selectedImage = originalImage
+        }
+        
+        self.profileImageView.image = selectedImage
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil )
+    }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -54,7 +126,6 @@ class DesignViewController: UIViewController,  UICollectionViewDelegate, UIColle
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell : SuggestedCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "suggestedCell", for: indexPath) as! SuggestedCollectionViewCell
-
         return cell
     }
 
@@ -73,11 +144,10 @@ class DesignViewController: UIViewController,  UICollectionViewDelegate, UIColle
     }
     
     func pageConfigs(){
-        self.profileImageView.layer.cornerRadius = self.profileImageView.frame.size.height / 2
-        self.profileView.layer.cornerRadius      = self.profileView.frame.size.height / 2
-        
-        self.followButton.layer.cornerRadius = self.followButton.frame.size.height / 2
-        self.shareButton.layer.cornerRadius  = self.shareButton.frame.size.height / 2
+        self.profileImageView.layer.cornerRadius = self.profileImageView.frame.size.width / 2
+        self.profileView.layer.cornerRadius      = self.profileView.frame.size.width / 2
+        self.followButton.layer.cornerRadius     = self.followButton.frame.size.height / 2
+        self.shareButton.layer.cornerRadius      = self.shareButton.frame.size.height / 2
         
         self.setButtonBorderColor(button: self.shareButton, red: 55, green: 181, blue: 189)
         self.setButtonBorderColor(button: self.followButton, red: 55, green: 181, blue: 189)
@@ -85,7 +155,7 @@ class DesignViewController: UIViewController,  UICollectionViewDelegate, UIColle
         self.setViewBorderColor(view: self.followersView, red: 224, green: 227, blue: 227)
         self.setViewBorderColor(view: self.followingView, red: 224, green: 227, blue: 227)
         
-        self.pagesLabel.text = String(self.numberOfPages)
+        self.pagesLabel.text     = String(self.numberOfPages)
         self.followersLabel.text = String(self.numberOfFollowers)
         self.followingLabel.text = String(self.numberOfFollowing)
         
@@ -118,15 +188,4 @@ class DesignViewController: UIViewController,  UICollectionViewDelegate, UIColle
             self.followButton.setTitleColor(UIColor.white, for: UIControlState.normal)
         }
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
