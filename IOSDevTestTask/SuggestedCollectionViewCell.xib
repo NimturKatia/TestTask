@@ -19,12 +19,12 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Aec-cz-o0W">
-                        <rect key="frame" x="0.0" y="0.0" width="189" height="103"/>
+                        <rect key="frame" x="0.0" y="0.0" width="189" height="104"/>
                         <color key="backgroundColor" red="1" green="0.78743283620000004" blue="0.78699398949999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yyr-1S-Gqg">
-                        <rect key="frame" x="9" y="115" width="171" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <rect key="frame" x="9" y="116" width="171" height="20"/>
+                        <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>

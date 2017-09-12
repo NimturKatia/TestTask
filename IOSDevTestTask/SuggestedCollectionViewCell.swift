@@ -18,4 +18,8 @@ class SuggestedCollectionViewCell: UICollectionViewCell {
         // Initialization code
     }
 
+    func configureCell(){
+        self.suggestedNewsImageView.image  = UIImage.init(named: "suggested")
+        self.suggestedNewsHeaderLabel.text = "Suggested header"
+    }
 }

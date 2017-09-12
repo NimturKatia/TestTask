@@ -46,7 +46,7 @@
                                         <rect key="frame" x="137" y="70" width="100" height="40"/>
                                         <color key="backgroundColor" red="0.0" green="0.80000000000000004" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="17"/>
-                                        <state key="normal" title="1. Translator">
+                                        <state key="normal" title=" 1. Translator ">
                                             <color key="titleColor" red="0.0" green="0.20000000000000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>

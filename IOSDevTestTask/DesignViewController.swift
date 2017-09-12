@@ -33,6 +33,7 @@ class DesignViewController: UIViewController,  UICollectionViewDelegate, UIColle
     let userStatusMessage = "Do you want to go out with me?\n(A) Yes (B) A (C) B."
     let numberOfPages     = 180
     let numberOfFollowers = 1244
+    
     let numberOfFollowing  = 12455
     
     override func viewDidLoad() {
@@ -44,6 +45,8 @@ class DesignViewController: UIViewController,  UICollectionViewDelegate, UIColle
         self.profileImageView.isUserInteractionEnabled = true
         self.profileImageView.addGestureRecognizer(tapGestureRecognizer)
         self.profileImageView.clipsToBounds = true
+        
+//        self.automaticallyAdjustsScrollViewInsets = false
     }
     
     func imageTapped(tapGestureRecognizer: UITapGestureRecognizer)
@@ -126,16 +129,26 @@ class DesignViewController: UIViewController,  UICollectionViewDelegate, UIColle
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell : SuggestedCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "suggestedCell", for: indexPath) as! SuggestedCollectionViewCell
+        cell.configureCell()
         return cell
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: (self.view.frame.width / 3 - 25), height: (self.view.frame.height / 3 - 110))
+        let width  = self.view.frame.width / 3 - 25
+        let image = UIImage.init(named: "noimage")
+        let height = (width * (image?.size.height)!) / (image?.size.width)! + 30
+        
+        return CGSize(width: width, height: height)
     }
     
     func setViewBorderColor(view: UIView, red: Double, green: Double, blue: Double){
         let color = UIColor(red: CGFloat(red/255.0), green: CGFloat(green/255.0), blue: CGFloat(blue/255.0), alpha: 1.0)
         view.layer.borderColor = color.cgColor
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        //top, left, bottom, right
+        return UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)
     }
     
     func setButtonBorderColor(button: UIButton, red: Double, green: Double, blue: Double){
@@ -144,13 +157,13 @@ class DesignViewController: UIViewController,  UICollectionViewDelegate, UIColle
     }
     
     func pageConfigs(){
-        let screenWidth = UIScreen.main.bounds.width / 375.0
+        let screenWidthMultiplier = UIScreen.main.bounds.width / 375.0
         
-        self.profileImageView.layer.cornerRadius = (self.profileImageView.frame.size.width / 2) * screenWidth
-        self.profileView.layer.cornerRadius      = (self.profileView.frame.size.width / 2) * screenWidth
+        self.profileImageView.layer.cornerRadius = (self.profileImageView.frame.size.width / 2) * screenWidthMultiplier
+        self.profileView.layer.cornerRadius      = (self.profileView.frame.size.width / 2) * screenWidthMultiplier
         
-        self.followButton.layer.cornerRadius     = self.followButton.frame.size.height / 2 * screenWidth
-        self.shareButton.layer.cornerRadius      = self.shareButton.frame.size.height / 2 * screenWidth
+        self.followButton.layer.cornerRadius     = self.followButton.frame.size.height / 2 * screenWidthMultiplier
+        self.shareButton.layer.cornerRadius      = self.shareButton.frame.size.height / 2 * screenWidthMultiplier
         
         self.setButtonBorderColor(button: self.shareButton, red: 55, green: 181, blue: 189)
         self.setButtonBorderColor(button: self.followButton, red: 55, green: 181, blue: 189)

@@ -21,6 +21,7 @@
 		9A0746671F5E99B6005CA249 /* 8.gif in Resources */ = {isa = PBXBuildFile; fileRef = 9A0746661F5E99B6005CA249 /* 8.gif */; };
 		9A07466B1F5EF4AF005CA249 /* SuggestedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0746691F5EF4AF005CA249 /* SuggestedCollectionViewCell.swift */; };
 		9A07466C1F5EF4AF005CA249 /* SuggestedCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A07466A1F5EF4AF005CA249 /* SuggestedCollectionViewCell.xib */; };
+		9A08E9661F668B0F009121B1 /* suggested.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A08E9651F668B0F009121B1 /* suggested.png */; };
 		9A94EBE31F5D6038002D7F6E /* Consts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A94EBE21F5D6038002D7F6E /* Consts.swift */; };
 		9A94EBE51F5D6E2D002D7F6E /* ServerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A94EBE41F5D6E2D002D7F6E /* ServerManager.swift */; };
 		9A94EBE81F5D8973002D7F6E /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A94EBE61F5D8973002D7F6E /* HistoryViewController.swift */; };
@@ -58,6 +59,7 @@
 		9A0746661F5E99B6005CA249 /* 8.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 8.gif; sourceTree = "<group>"; };
 		9A0746691F5EF4AF005CA249 /* SuggestedCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuggestedCollectionViewCell.swift; sourceTree = "<group>"; };
 		9A07466A1F5EF4AF005CA249 /* SuggestedCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SuggestedCollectionViewCell.xib; sourceTree = "<group>"; };
+		9A08E9651F668B0F009121B1 /* suggested.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = suggested.png; sourceTree = "<group>"; };
 		9A94EBE21F5D6038002D7F6E /* Consts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Consts.swift; sourceTree = "<group>"; };
 		9A94EBE41F5D6E2D002D7F6E /* ServerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerManager.swift; sourceTree = "<group>"; };
 		9A94EBE61F5D8973002D7F6E /* HistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 		9A0746681F5EF466005CA249 /* SuggestedCell */ = {
 			isa = PBXGroup;
 			children = (
+				9A08E9651F668B0F009121B1 /* suggested.png */,
 				9A0746691F5EF4AF005CA249 /* SuggestedCollectionViewCell.swift */,
 				9A07466A1F5EF4AF005CA249 /* SuggestedCollectionViewCell.xib */,
 			);
@@ -309,6 +312,7 @@
 				9ACDA8971F59A4AF008484EB /* LaunchScreen.storyboard in Resources */,
 				9ACDA8941F59A4AF008484EB /* Assets.xcassets in Resources */,
 				9ACDA8A41F59A546008484EB /* TranslatorViewController.xib in Resources */,
+				9A08E9661F668B0F009121B1 /* suggested.png in Resources */,
 				9A07465D1F5E999E005CA249 /* 3.gif in Resources */,
 				9A0746571F5E998F005CA249 /* 0.gif in Resources */,
 				9A94EBE91F5D8973002D7F6E /* HistoryViewController.xib in Resources */,
