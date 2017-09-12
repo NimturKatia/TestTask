@@ -46,7 +46,7 @@ class DesignViewController: UIViewController,  UICollectionViewDelegate, UIColle
         self.profileImageView.addGestureRecognizer(tapGestureRecognizer)
         self.profileImageView.clipsToBounds = true
         
-//        self.automaticallyAdjustsScrollViewInsets = false
+        self.navigationItem.setHidesBackButton(true, animated: true)
     }
     
     func imageTapped(tapGestureRecognizer: UITapGestureRecognizer)
@@ -147,7 +147,6 @@ class DesignViewController: UIViewController,  UICollectionViewDelegate, UIColle
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        //top, left, bottom, right
         return UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)
     }
     

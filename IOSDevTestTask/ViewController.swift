@@ -25,10 +25,6 @@ class ViewController: UIViewController {
         self.navigationController?.navigationBar.barTintColor = UIColor.black
         self.navigationController?.navigationBar.tintColor = UIColor.lightText
         self.navigationController?.navigationBar.barStyle = .blackOpaque
-        
-        self.translatorButton.titleLabel?.adjustsFontSizeToFitWidth = true
-        self.imagesButton.titleLabel?.adjustsFontSizeToFitWidth     = true
-        self.designButton.titleLabel?.adjustsFontSizeToFitWidth     = true
     }
 
     override func didReceiveMemoryWarning() {

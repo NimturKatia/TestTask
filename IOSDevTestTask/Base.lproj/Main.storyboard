@@ -6,8 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -43,8 +41,12 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SeY-Hs-eYt">
-                                        <rect key="frame" x="137" y="70" width="100" height="40"/>
+                                        <rect key="frame" x="137" y="100" width="100" height="40"/>
                                         <color key="backgroundColor" red="0.0" green="0.80000000000000004" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="Oih-fF-Tuw"/>
+                                            <constraint firstAttribute="width" constant="100" id="UF9-y6-VGi"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="17"/>
                                         <state key="normal" title=" 1. Translator ">
                                             <color key="titleColor" red="0.0" green="0.20000000000000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -54,8 +56,12 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uYa-aB-CZm">
-                                        <rect key="frame" x="137" y="126" width="100" height="40"/>
+                                        <rect key="frame" x="137" y="156" width="100" height="40"/>
                                         <color key="backgroundColor" red="1" green="0.78743283620000004" blue="0.78699398949999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="lbN-O8-dl6"/>
+                                            <constraint firstAttribute="width" constant="100" id="x58-oa-iXk"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="17"/>
                                         <state key="normal" title="2. Images">
                                             <color key="titleColor" red="0.80000000000000004" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -65,8 +71,12 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fNl-KA-7Ne">
-                                        <rect key="frame" x="137" y="182" width="100" height="40"/>
+                                        <rect key="frame" x="137" y="212" width="100" height="40"/>
                                         <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="L9c-pc-YG8"/>
+                                            <constraint firstAttribute="width" constant="100" id="uAw-jQ-5kp"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="17"/>
                                         <state key="normal" title="3. Design">
                                             <color key="titleColor" red="0.20000000000000001" green="0.0" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -78,7 +88,7 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="uYa-aB-CZm" firstAttribute="centerX" secondItem="YCa-wR-kaj" secondAttribute="centerX" id="O4h-5E-qgU"/>
-                                    <constraint firstItem="SeY-Hs-eYt" firstAttribute="top" secondItem="YCa-wR-kaj" secondAttribute="top" constant="70" id="dsA-64-1D9"/>
+                                    <constraint firstItem="SeY-Hs-eYt" firstAttribute="top" secondItem="YCa-wR-kaj" secondAttribute="top" constant="100" id="dsA-64-1D9"/>
                                     <constraint firstItem="uYa-aB-CZm" firstAttribute="top" secondItem="SeY-Hs-eYt" secondAttribute="bottom" constant="16" id="gEL-pT-oW1"/>
                                     <constraint firstItem="fNl-KA-7Ne" firstAttribute="centerX" secondItem="YCa-wR-kaj" secondAttribute="centerX" id="lcv-87-WwN"/>
                                     <constraint firstItem="fNl-KA-7Ne" firstAttribute="top" secondItem="uYa-aB-CZm" secondAttribute="bottom" constant="16" id="qnw-kc-2BG"/>
@@ -90,14 +100,8 @@
                         <constraints>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="YCa-wR-kaj" secondAttribute="bottom" id="3BG-em-XdY"/>
                             <constraint firstItem="YCa-wR-kaj" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="FNF-Ac-jJU"/>
-                            <constraint firstItem="SeY-Hs-eYt" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="100/375" id="Fut-Ic-P0h"/>
-                            <constraint firstItem="uYa-aB-CZm" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="100/375" id="Pgf-PM-ud1"/>
                             <constraint firstItem="YCa-wR-kaj" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="WXv-Aa-Oh5"/>
-                            <constraint firstItem="fNl-KA-7Ne" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="40/375" id="ZsZ-xm-xpX"/>
                             <constraint firstAttribute="trailing" secondItem="YCa-wR-kaj" secondAttribute="trailing" id="bNl-Sj-LQP"/>
-                            <constraint firstItem="fNl-KA-7Ne" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="100/375" id="hmj-nK-AnN"/>
-                            <constraint firstItem="uYa-aB-CZm" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="40/375" id="t4P-rb-Clr"/>
-                            <constraint firstItem="SeY-Hs-eYt" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="40/375" id="u21-W9-mYR"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="bw3-8E-fd8"/>
